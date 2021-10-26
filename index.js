@@ -106,7 +106,7 @@ array.forEach(function (blah, anotherArg) {
 })
 
 console.log("====================")
-console.log("== Object")
+console.log("== Objects")
 console.log("====================")
 
 var mapping = {
@@ -134,3 +134,25 @@ console.log("== student.name:", student.name)
 var field = 'gpa'
 console.log("== student[field]:", student[field])
 console.log("== student.getFullName():", student.getFullName())
+
+console.log("====================")
+console.log("== Classes")
+console.log("====================")
+
+function Student(firstName, lastName, gpa) {
+  this.firstName = firstName
+  this.lastName = lastName
+  this.gpa = gpa
+}
+
+Student.prototype.getFullName = function () {
+  return this.firstName + " " + this.lastName
+}
+
+var s = new Student("Leia", "Organa", 4.0)
+console.log("== s:", s)
+console.log("== s.getFullName():", s.getFullName())
+
+var s2 = new Student("Han", "Solo", 2.5)
+console.log("== s2:", s2)
+console.log("== s2.getFullName():", s2.getFullName())
